@@ -7,6 +7,9 @@ public class PlayerAnimation : MonoBehaviour
     private Animator _animator;
     private SpriteRenderer _spriteRenderer;
     private int runAni = Animator.StringToHash("Run");
+    private int jumpAni = Animator.StringToHash("Jump");
+    private int fallAni = Animator.StringToHash("Fall");
+    private int rFallAni = Animator.StringToHash("RFall");
     private void Awake()
     {
         _animator = GetComponent<Animator>();
@@ -17,5 +20,19 @@ public class PlayerAnimation : MonoBehaviour
     {
         _animator.SetBool(runAni, palyer.x != 0);
         _spriteRenderer.flipX = palyer.x != 0 ? palyer.x < 1 : _spriteRenderer.flipX;
+    }
+
+    public void Jumpnimator(bool jump)
+    {
+        _animator.SetBool(jumpAni, jump);
+    }
+    public void FallAnimator(bool fall)
+    {
+        _animator.SetBool(fallAni, fall);
+    }
+
+    public void RFallAnimator(bool rFall)
+    {
+        _animator.SetBool(rFallAni, rFall);
     }
 }
