@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -16,6 +17,11 @@ public class PlayerMove : MonoBehaviour
     }
 
     private void FixedUpdate()
+    {
+        Move();
+    }
+
+    private void Move()
     {
         Vector2 dir = _playerInput.PlayerDir;
         _playerrigidbody2D.velocity = dir.normalized * Speed;

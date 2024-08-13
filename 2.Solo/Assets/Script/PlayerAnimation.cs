@@ -9,7 +9,6 @@ public class PlayerAnimation : MonoBehaviour
     private int runAni = Animator.StringToHash("Run");
     private int jumpAni = Animator.StringToHash("Jump");
     private int fallAni = Animator.StringToHash("Fall");
-    private int rFallAni = Animator.StringToHash("RFall");
     private void Awake()
     {
         _animator = GetComponent<Animator>();
@@ -31,8 +30,4 @@ public class PlayerAnimation : MonoBehaviour
         _animator.SetBool(fallAni, fall);
     }
 
-    public void RFallAnimator(bool rFall)
-    {
-        _animator.SetBool(rFallAni, rFall);
-    }
 }
